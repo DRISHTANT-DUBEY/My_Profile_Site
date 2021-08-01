@@ -1,3 +1,4 @@
+const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -5,7 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      custom: ["Space Grotesk", "sans-serif"],
+      sans: ["Space Grotesk", ...fontFamily.sans],
     },
   },
   variants: {
