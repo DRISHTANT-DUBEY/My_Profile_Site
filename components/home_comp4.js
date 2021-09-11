@@ -7,7 +7,7 @@ import proj3 from "../public/proj3.png";
 export default function Home_comp4() {
     return (
       <div class="min-w-screen min-h-screen flex flex-col md:flex-row items-center mt-5">
-        <div class="container flex flex-wrap overflow-hidden font-bold tracking-tight text-black dark:text-white">
+        <div id="projects" class="container flex flex-wrap overflow-hidden font-bold tracking-tight text-black dark:text-white">
           <div class="flex flex-wrap overflow-hidden">
             <div class="my-8 px-8 w-full overflow-hidden md:my-10 md:px-10 md:w-full lg:my-16 lg:px-16 lg:w-full xl:my-32 xl:px-32 xl:w-full items-center ">
               <div class="relative w-2/3 h-56 ml-24 lg:ml-64 self-center">

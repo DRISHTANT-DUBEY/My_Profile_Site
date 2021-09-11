@@ -3,7 +3,10 @@
 export default function Home_comp3() {
     return (
       <div class="min-w-screen min-h-screen flex flex-col md:flex-row items-center mt-5">
-        <div class="container flex flex-wrap -mx-1 overflow-hidden md:-mx-1 font-bold tracking-tight text-black dark:text-white">
+        <div
+          id="experience"
+          class="container flex flex-wrap -mx-1 overflow-hidden md:-mx-1 font-bold tracking-tight text-black dark:text-white"
+        >
           <div class="my-1 px-1 w-full overflow-hidden md:my-1 md:px-1 md:w-1/2 lg:w-1/3">
             <div className="w-60">
               <p class="text-3xl lg:text-6xl text-black dark:text-white ml-5">
@@ -152,31 +155,19 @@ export default function Home_comp3() {
               <div class="my-2 px-2 w-full overflow-hidden md:my-3 md:px-3 md:w-full lg:my-4 lg:px-4 lg:w-1/2 xl:my-3 xl:px-3 xl:w-1/2">
                 <div class="inline-flex flex-col space-y-4 items-start justify-start w-80 h-72">
                   <div class="inline-flex space-x-96 items-end justify-start w-full">
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.8906 1.20013L30.2074 14.778L31.3846 13.5779L18.0678 0L16.8906 1.20013Z"
-                        fill="#5221E6"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M18.8637 7.60133C18.1418 6.86522 17.053 6.65144 16.1145 7.06151L6.87238 11.1001C5.78076 11.5771 4.9391 12.5059 4.56596 13.6597C3.6901 16.3682 2.55694 19.9468 1.64208 23.0059C1.18491 24.5346 0.780321 25.9401 0.489324 27.0447C0.344005 27.5963 0.224954 28.0807 0.141614 28.4716C0.0640005 28.8358 0 29.1944 0 29.4529V29.8044L2.15216 31.9988H2.4969C2.75053 31.9988 3.10228 31.9336 3.45939 31.8545C3.84284 31.7695 4.31789 31.6481 4.8589 31.4999C5.94225 31.2033 7.32063 30.7907 8.81991 30.3246C11.8202 29.3918 15.33 28.2363 17.9865 27.3434C19.1181 26.9629 20.029 26.1048 20.4969 24.9917L24.4578 15.5683C24.86 14.6115 24.6502 13.5013 23.9283 12.7652L18.8637 7.60133ZM16.7703 8.62152C17.0831 8.48483 17.446 8.5561 17.6867 8.80147L22.7512 13.9654C22.9919 14.2107 23.0619 14.5808 22.9277 14.8997L18.9668 24.3232C18.6855 24.9924 18.1398 25.5046 17.4651 25.7314C14.8148 26.6224 11.318 27.7735 8.33442 28.701C6.84179 29.1652 5.48394 29.5714 4.42709 29.8608C3.89801 30.0057 3.45196 30.1192 3.10586 30.196C3.03268 30.2121 2.96513 30.2265 2.90318 30.2389L11.4079 21.5674C12.336 22.0195 13.4813 21.8535 14.2501 21.0697C15.2252 20.0755 15.2252 18.4636 14.2501 17.4694C13.275 16.4751 11.694 16.4751 10.7189 17.4694C9.95018 18.2532 9.7875 19.421 10.2309 20.3672L1.72606 29.0388C1.73829 28.9756 1.75232 28.9067 1.76824 28.8321C1.84346 28.4792 1.95482 28.0243 2.09695 27.485C2.38081 26.4074 2.77917 25.0229 3.2343 23.501C4.14407 20.4589 5.27295 16.8935 6.14685 14.1912C6.36927 13.5034 6.87162 12.947 7.5281 12.6601L16.7703 8.62152Z"
-                        fill="#5221E6"
-                      />
-                    </svg>
+                    <img
+                    className="w-10 h-10"
+                      src="/Vectorg.svg"
+                    />
                   </div>
                   <p class="text-2xl text-black dark:text-white">
-                    Visual Design
+                    Machine Learning
                   </p>
                   <p class="w-full text-base font-medium leading-normal text-gray-700 dark:text-gray-400">
-                    My experience has helped me learn to develop the eye for
-                    design. Colors, typography, layout and the whole package.
+                    A true love goes to machine learning a I have hands on 
+                    making good insights, making models of fairly 
+                    good accuracy level, can make and bridge 
+                    between software and its M.L capabilites easily.  
                   </p>
                 </div>
               </div>
