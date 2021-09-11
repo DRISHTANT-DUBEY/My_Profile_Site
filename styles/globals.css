@@ -32,7 +32,7 @@ html {
 
 @supports not (backdrop-filter: none) {
   .sticky-nav {
-    backdrop-filter: var(--tw-backdrop-blur);
+    backdrop-filter: none;
     @apply bg-opacity-100;
   }
 }
