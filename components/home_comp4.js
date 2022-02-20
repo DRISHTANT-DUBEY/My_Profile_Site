@@ -54,14 +54,13 @@ export default function Home_comp4() {
                   placeholder="blur"
                 />
                 <div class="container flex flex-col justify-center items-start -ml-24 md:-ml-96 lg:-ml-20 px-3 w-max md:w-auto my-auto bg-pink-200 dark:bg-gray-900 z-0 h-52 mix-blend-normal dark:mix-blend-lighten">
-                  <h2 className="font-bold md:ml-1 text-xl tracking-tight text-black dark:text-white">
-                    Zoom Clone
+                  <h2 className="font-bold md:ml-1 text-xl tracking-tight text-black dark:text-white" href='https://netflix-redesign-ten.vercel.app/' hrefpass>
+                    Netflix Clone
                   </h2>
                   <p class="font-medium text-base md:w-1/3 md:ml-5 leading-relaxed capitalize tracking-tight text-green-500 dark:text-gray-400 mt-1">
-                    I worked with React.js  extensively making a clone of 
-                    zoom app using electron mobile app with react native 
-                    for both Android and iOS. This project lasted for 2
-                    months.
+                    I worked with Next Js making a clone for Netflix website
+                    with features like login, signup, and dashbard. This project
+                    lasted for half month.
                   </p>
                 </div>
               </div>
@@ -82,7 +81,7 @@ export default function Home_comp4() {
                   <p class="font-medium text-base md:w-1/3 md:ml-5 leading-relaxed capitalize tracking-tight text-green-500 dark:text-gray-400 mt-1">
                     Spotify UI/UI was recreated to bring my 
                     frontend skills to test and create and 
-                    clone of spotify using react.js and 
+                    clone of spotify using Next Js and 
                     Spotify API. 
                   </p>
                 </div>
