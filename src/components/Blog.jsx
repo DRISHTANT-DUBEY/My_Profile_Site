@@ -57,6 +57,29 @@ export default function Blog() {
       .finally(() => setLoading(false))
   }, [])
 
+  // Dynamic IntersectionObserver to trigger scroll reveals on asynchronously loaded posts
+  useEffect(() => {
+    if (loading) return
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in')
+            io.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.05 }
+    )
+    
+    // Find all reveal elements inside the blog section and observe them
+    const elements = document.querySelectorAll('#blog .reveal')
+    elements.forEach((el) => io.observe(el))
+    
+    return () => io.disconnect()
+  }, [loading, posts])
+
   return (
     <section className="sect sect--alt" id="blog">
       <div className="sect__inner">
@@ -65,23 +88,29 @@ export default function Blog() {
             <div className="sect__badge">From the Blog</div>
             <h2 className="sect__title">WRITING</h2>
           </div>
-          <div className="sect__right">
-            <p className="sect__desc">
-              Thoughts on AI tooling, developer education, and building in India. No fluff, just signal.
-            </p>
-            <a href="https://admin-panel-mu-flame.vercel.app" target="_blank" rel="noopener noreferrer" className="sect__link">
-              Admin Panel →
-            </a>
-          </div>
+          
         </div>
 
         {loading && (
           <div className="blog-grid">
+            <style>{`
+              @keyframes pulseSkeleton {
+                0%, 100% { opacity: 0.15; }
+                50% { opacity: 0.35; }
+              }
+              .pulse-skeleton {
+                animation: pulseSkeleton 1.6s ease-in-out infinite;
+                height: 260px;
+                background: rgba(44, 194, 149, 0.03);
+                border: 1px solid rgba(44, 194, 149, 0.12);
+                border-radius: 16px;
+                pointer-events: none;
+              }
+            `}</style>
             {[0, 1, 2].map((i) => (
               <div 
                 key={i} 
-                className={`bcard reveal d${i+1}`}
-                style={{ height: '260px', opacity: 0.15, pointerEvents: 'none', background: 'rgba(44, 194, 149, 0.02)' }}
+                className={`pulse-skeleton d${i+1}`}
               />
             ))}
           </div>
