@@ -20,7 +20,7 @@ function formatDate(ts) {
 }
 
 async function fetchPublishedPosts() {
-  const url = `${API_BASE_URL}/api/posts`
+  const url = `${API_BASE_URL}/api/post_list`
   const res = await fetch(url)
   if (!res.ok) {
     throw new Error(`Failed to fetch posts: ${res.statusText}`)

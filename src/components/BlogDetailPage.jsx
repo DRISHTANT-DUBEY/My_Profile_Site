@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import mermaid from 'mermaid'
 
 const API_BASE_URL = 'https://dd-dev-render-server.onrender.com'
 
@@ -50,6 +51,26 @@ export default function BlogDetailPage({ slug }) {
       })
       .finally(() => setLoading(false))
   }, [slug])
+
+  useEffect(() => {
+    if (post && !loading) {
+      mermaid.initialize({ startOnLoad: false, theme: 'dark' })
+      // Small timeout ensures DOM is fully updated from dangerouslySetInnerHTML
+      setTimeout(() => {
+        const codeBlocks = document.querySelectorAll('.language-mermaid')
+        codeBlocks.forEach(block => {
+          // If it's inside a pre block, we want to replace the pre block or just turn the code block into a mermaid container
+          block.classList.add('mermaid')
+          if (block.parentElement && block.parentElement.tagName.toLowerCase() === 'pre') {
+             block.parentElement.classList.add('mermaid-wrapper')
+             block.parentElement.style.background = 'transparent'
+             block.parentElement.style.border = 'none'
+          }
+        })
+        mermaid.run({ querySelector: '.mermaid' }).catch(err => console.error('Mermaid render error:', err))
+      }, 100)
+    }
+  }, [post, loading])
 
   const goBack = (e) => {
     e.preventDefault()
@@ -208,6 +229,44 @@ export default function BlogDetailPage({ slug }) {
         }
         .post-body a:hover {
           opacity: 0.8;
+        }
+        
+        /* Table styles */
+        .post-body table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2.5rem 0;
+          font-size: 0.95em;
+        }
+        .post-body th, .post-body td {
+          padding: 1rem 1.25rem;
+          text-align: left;
+          border-bottom: 1px solid rgba(44, 194, 149, 0.15);
+          line-height: 1.6;
+        }
+        .post-body th {
+          font-weight: 700;
+          color: var(--text);
+          background: rgba(44, 194, 149, 0.04);
+          border-bottom: 2px solid rgba(44, 194, 149, 0.25);
+        }
+        .post-body td {
+          color: rgba(239, 246, 243, 0.85);
+          vertical-align: top;
+        }
+        .post-body tr:hover td {
+          background: rgba(44, 194, 149, 0.02);
+        }
+        
+        /* Mermaid styles */
+        .post-body .mermaid {
+          display: flex;
+          justify-content: center;
+          margin: 2rem 0;
+        }
+        .post-body .mermaid-wrapper {
+          padding: 0 !important;
+          margin: 2rem 0 !important;
         }
         
         /* Spinner styles */
