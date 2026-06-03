@@ -92,7 +92,8 @@ export default function BlogDetailPage({ slug }) {
           padding-top: 40px;
         }
         .back-link {
-          display: inline-flex;
+          display: flex;
+          width: fit-content;
           align-items: center;
           gap: 8px;
           font-family: 'DM Mono', monospace;
