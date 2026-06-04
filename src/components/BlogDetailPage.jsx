@@ -92,8 +92,7 @@ export default function BlogDetailPage({ slug }) {
           padding-top: 40px;
         }
         .back-link {
-          display: flex;
-          width: fit-content;
+          display: inline-flex;
           align-items: center;
           gap: 8px;
           font-family: 'DM Mono', monospace;
@@ -104,8 +103,13 @@ export default function BlogDetailPage({ slug }) {
           letter-spacing: 0.1em;
           border-bottom: 1px solid transparent;
           padding-bottom: 2px;
-          margin-bottom: 48px;
           transition: all 0.2s;
+        }
+        .back-link-wrapper {
+          display: block;
+          margin-bottom: 48px;
+          width: 100%;
+          text-align: left;
         }
         .back-link:hover {
           border-color: var(--green);
@@ -302,9 +306,11 @@ export default function BlogDetailPage({ slug }) {
 
       {error && !loading && (
         <div className="detail-container" style={{ textAlign: 'center', padding: '100px 20px' }}>
-          <a href="#" onClick={goBack} className="back-link">
-            ← Back to home
-          </a>
+          <div className="back-link-wrapper">
+            <a href="#" onClick={goBack} className="back-link">
+              ← Back to home
+            </a>
+          </div>
           <div style={{ border: '1px dashed rgba(255,102,102,0.2)', borderRadius: '16px', padding: '40px', background: 'rgba(255,102,102,0.02)' }}>
             <p style={{ color: '#ff6666', fontSize: '16px', fontWeight: 600 }}>Article not found.</p>
             <p style={{ color: 'var(--muted)', fontSize: '13px', marginTop: '8px' }}>{error}</p>
@@ -314,9 +320,11 @@ export default function BlogDetailPage({ slug }) {
 
       {!loading && !error && post && (
         <div className="detail-container">
-          <a href="#" onClick={goBack} className="back-link">
-            ← Back to home
-          </a>
+          <div className="back-link-wrapper">
+            <a href="#" onClick={goBack} className="back-link">
+              ← Back to home
+            </a>
+          </div>
 
           <div className="post-cat">{post.cat}</div>
           <h1 className="post-title">{post.title}</h1>
